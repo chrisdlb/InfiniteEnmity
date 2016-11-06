@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashTrek16.CSharp.Plugins", "FlashTrek16.CSharp.Plugins.csproj", "{B4C82CA3-83AC-D580-A132-8A49D1AC0D55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashTrek16.CSharp", "FlashTrek16.CSharp.csproj", "{AD224273-C090-630F-761B-FF7D4B74DA8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashTrek16.CSharp.Editor", "FlashTrek16.CSharp.Editor.csproj", "{6C30C9A9-6E88-5DE5-C7E7-326D38500042}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C82CA3-83AC-D580-A132-8A49D1AC0D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C82CA3-83AC-D580-A132-8A49D1AC0D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C82CA3-83AC-D580-A132-8A49D1AC0D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C82CA3-83AC-D580-A132-8A49D1AC0D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD224273-C090-630F-761B-FF7D4B74DA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD224273-C090-630F-761B-FF7D4B74DA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD224273-C090-630F-761B-FF7D4B74DA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD224273-C090-630F-761B-FF7D4B74DA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C30C9A9-6E88-5DE5-C7E7-326D38500042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C30C9A9-6E88-5DE5-C7E7-326D38500042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C30C9A9-6E88-5DE5-C7E7-326D38500042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C30C9A9-6E88-5DE5-C7E7-326D38500042}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
