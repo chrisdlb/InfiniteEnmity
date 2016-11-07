@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour {
     public float Xmax;
     public float Ymax;
     public float warpWaitTime;
+    public float maxNormalSpeed;
+    public float maxWarpSpeed;
 
     void Start()
     {
@@ -43,11 +45,11 @@ public class Movement : MonoBehaviour {
         
         if(Input.GetButton("Warp") && warpTimer == 0)
         {
-            maxSpeed = 80f;
+            maxSpeed = maxWarpSpeed;
         }
         else
         {
-            maxSpeed = 4f;
+            maxSpeed = maxNormalSpeed;
             z = rot.eulerAngles.z;
             z -= Input.GetAxis("Rotation") * rotSpeed * Time.deltaTime;
             rot = Quaternion.Euler(0, 0, z);

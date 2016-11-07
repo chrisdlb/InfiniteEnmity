@@ -5,6 +5,7 @@ public class Shooting : MonoBehaviour {
 
     public GameObject torpedoPrefab;
     public GameObject phaserPrefab;
+    public AudioSource audioSource;
 
     public float shootingInterval = 0.3f;
     float pauseTimer = 0;
@@ -25,6 +26,8 @@ public class Shooting : MonoBehaviour {
             pauseTimer = shootingInterval;
 
             Instantiate(phaserPrefab, transform.position, transform.rotation);
+
+            audioSource.Play();
         }
     }
 }
