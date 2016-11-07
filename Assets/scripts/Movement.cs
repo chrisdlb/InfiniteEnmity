@@ -4,59 +4,58 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     //Movement Variables
-    float maxSpeed = 4f;
-    public float rotSpeed = 180f;
-    public float Xmax = 18f;
-    public float Ymax = 10f;
+    float maxSpeed;
+    float warpTimer;
+
+    public float rotSpeed;
+    public float Xmax;
+    public float Ymax;
+    public float warpWaitTime;
+
+    void Start()
+    {
+        warpTimer = warpWaitTime;
+    }
 
     // Update is called once per frame
     void Update () {
-
-        //ROTATE ship left and right
-        /*
-        Quaternion rot = transform.rotation;
-        float z = rot.eulerAngles.z;
-        z -= Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
-        rot = Quaternion.Euler(0, 0, z);
-        transform.rotation = rot;
-        */
-
         //MOVE ship forward and backward
-
         Vector3 pos;
         Vector3 velocity;
 
         float z;
-        Quaternion rot;
+        Quaternion rot = transform.rotation;
 
-        rot = transform.rotation;
-        z = rot.eulerAngles.z;
-        z -= Input.GetAxis("Rotation") * rotSpeed * Time.deltaTime;
-        rot = Quaternion.Euler(0, 0, z);
-        transform.rotation = rot;
-        pos = transform.position;
-        velocity = new Vector3(0, Input.GetAxis("Movement") * maxSpeed * Time.deltaTime, 0);
-        pos += rot * velocity;
-
-        /*
-        if (Input.GetKey(KeyCode.Tab))
+        //Countdown warp timer
+        if (Input.GetButton("Warp") && Input.GetAxis("Movement") == 1)
         {
+            warpTimer-= Time.deltaTime;
+            if(warpTimer <= 0)
+            {
+                warpTimer = 0;
+            }
 
-            maxSpeed = 80f;
-            rot = transform.rotation;
-            pos = transform.position;
-            velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
-            pos += rot * velocity;
         }
         else
         {
-            
-
+            warpTimer = warpWaitTime;
         }
-
-        */
-
-
+        
+        if(Input.GetButton("Warp") && warpTimer == 0)
+        {
+            maxSpeed = 80f;
+        }
+        else
+        {
+            maxSpeed = 4f;
+            z = rot.eulerAngles.z;
+            z -= Input.GetAxis("Rotation") * rotSpeed * Time.deltaTime;
+            rot = Quaternion.Euler(0, 0, z);
+            transform.rotation = rot;
+        }
+        pos = transform.position;
+        velocity = new Vector3(0, Input.GetAxis("Movement") * maxSpeed * Time.deltaTime, 0);
+        pos += rot * velocity;
 
         //MAP boundries
         if (pos.y > Ymax){
