@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MenuControlsScript : MonoBehaviour {
@@ -29,7 +30,6 @@ public class MenuControlsScript : MonoBehaviour {
 
     public void closeAll()
     {
-
         controls = false;
         load = false;
         main = true;
